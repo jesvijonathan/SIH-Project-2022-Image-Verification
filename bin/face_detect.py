@@ -6,7 +6,7 @@ import cv2
 import os
 from config import *
 
-show_output_boxes = False
+# This shiz works like charm
 
 def face_detect(photo_name):
     # Load the cascade
@@ -35,8 +35,8 @@ def face_detect(photo_name):
             print("adsasd")
             for (x, y, w, h) in faces:
                 cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-            cv2.imshow('img', img)
-            cv2.waitKey()
+            cv2.imshow('Face', img)
+            #cv2.waitKey()
         return True
     
     else:

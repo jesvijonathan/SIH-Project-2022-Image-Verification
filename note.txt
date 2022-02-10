@@ -1,0 +1,10 @@
+for now, i have done the backend and main logic
+
+whats remaining is, 
+creating a flask hosting application 
+creating a web/admission portal similar to government one
+linkinh the application
+checking and testing trials, and record accuracy
+find beter solution
+optimize 
+and other crap, we will see ...

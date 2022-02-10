@@ -2,6 +2,8 @@ import cv2
 import os
 from config import *
 
+#This works, but often also gives false positive cases, so am working on a better logic
+
 def signature_detect(sign_name):
     cwd = os.getcwd()
     #print(cwd)
@@ -26,8 +28,8 @@ def signature_detect(sign_name):
                 x,y,w,h = cv2.boundingRect(c)
                 if(h>20):
                     cv2.rectangle(image,(x,y),(x+w,y+h),(0,0,255),1)
-            cv2.imshow("Result", image)
-        cv2.waitKey()
+            cv2.imshow("Signature Entity", image)
+            #cv2.waitKey()
         return True
         
     else:
