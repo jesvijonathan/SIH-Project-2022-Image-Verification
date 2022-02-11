@@ -1,5 +1,5 @@
 ! run app.py to test (flask) get photo recognition logic (and some more stuff i forgot, check it out !
-! if you wanna try the app, run app.py flask app and go to the local url it gives, and yeah... test it out !
+! if you wanna try the app, run app.py flask app and go to the local url (some https://some_local_ip/upload2) it gives, and yeah... test it out !
 
 for now, i have done the backend and main logic
 
