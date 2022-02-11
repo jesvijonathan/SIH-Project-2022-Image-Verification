@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!Last edited 2/11/2022>
+<!bats>
+<! Jesvi add form action over input stream to pass captured photo to flask try returnning bool first....!>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Demo page edit-27 </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="title">/ DEMO CITS Registration /</div>
+        <div class="content">
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Father / Husband / Guardian Name</span>
+                        <input type="text" placeholder="Enter your Father / Husband / Guardian Name " required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mother's Name</span>
+                        <input type="text" placeholder="Enter your Mother's Name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Aadhar (UID)</span>
+                        <input type="password" placeholder="Aadhar (UID) " required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="text" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input type="text" placeholder="Enter your address" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address 2</span>
+                        <input type="text" placeholder="Enter your address" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Pin Code :</span>
+                        <input type="text" placeholder="Enter your Pincode" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Pan Number :</span>
+                        <input type="password" placeholder="Pan Number" required>
+                    </div>
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="gender" id="dot-1">
+                    <input type="radio" name="gender" id="dot-2">
+                    <input type="radio" name="gender" id="dot-3">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Prefer not to say</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="Diploma" id="dot-4">
+                    <input type="radio" name="Diploma" id="dot-5">
+                    <span class="gender-title">Diploma passed :</span>
+                    <div class="category1">
+                        <label for="dot-4">
+                            <span class="dot four"></span>
+                            <span class="gender">Yes</span>
+                        </label>
+                        <label for="dot-5">
+                            <span class="dot five"></span>
+                            <span class="gender">No</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="caste" id="dot-6">
+                    <input type="radio" name="caste" id="dot-7">
+                    <input type="radio" name="caste" id="dot-8">
+                    <input type="radio" name="caste" id="dot-9">
+                    <span class="gender-title">Category :</span>
+                    <div class="category1">
+                        <label for="dot-6">
+                            <span class="dot six"></span>
+                            <span class="gender">BC</span>
+                        </label>
+                        <label for="dot-7">
+                            <span class="dot seven"></span>
+                            <span class="gender">OBC</span>
+                        </label>
+                        <label for="dot-8">
+                            <span class="dot eight"></span>
+                            <span class="gender">MBC</span>
+                        </label>
+                        <label for="dot-9">
+                            <span class="dot nine"></span>
+                            <span class="gender">OC</span>
+                        </label>
+                    </div>
+                    <div class="gender-details">
+                        <input type="radio" name="Physical" id="dot-10">
+                        <input type="radio" name="Physical" id="dot-11">
+                        <span class="gender-title">Physically Challenged ?:</span>
+                        <div class="category1">
+                            <label for="dot-10">
+                                <span class="dot ten"></span>
+                                <span class="gender">Yes</span>
+                            </label>
+                            <label for="dot-11">
+                                <span class="dot eleven"></span>
+                                <span class="gender">No</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="gender-details">
+                        <input type="radio" name="EX" id="dot-12">
+                        <input type="radio" name="EX" id="dot-13">
+                        <span class="gender-title">Ex-Servicemen ?:</span>
+                        <div class="category1">
+                            <label for="dot-12">
+                                <span class="dot twelve"></span>
+                                <span class="gender">Yes</span>
+                            </label>
+                            <label for="dot-13">
+                                <span class="dot thirteen"></span>
+                                <span class="gender">No</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="gender-details">
+                        <input type="radio" name="Mar" id="dot-14">
+                        <input type="radio" name="Mar" id="dot-15">
+                        <span class="gender-title">Martial Status :</span>
+                        <div class="category1">
+                            <label for="dot-14">
+                                <span class="dot fourteen"></span>
+                                <span class="gender">Yes</span>
+                            </label>
+                            <label for="dot-15">
+                                <span class="dot fifteen"></span>
+                                <span class="gender">No</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="gender-details">
+                        <input type="radio" name="ITI" id="dot-16">
+                        <input type="radio" name="ITI" id="dot-17">
+                        <span class="gender-title">ITI passed ? :</span>
+                        <div class="category1">
+                            <label for="dot-16">
+                                <span class="dot sixteen"></span>
+                                <span class="gender">Yes</span>
+                            </label>
+                            <label for="dot-17">
+                                <span class="dot seventeen"></span>
+                                <span class="gender">No</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Photo /With proper face /</span>
+                        <input type="file" id="myFile" name="filename">
+                    </div>
+                    <br>
+                    <div class="input-box">
+                        <span class="details">Signature / With png format /</span>
+                        <input type="file" id="myFile" name="filename">
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Submit">
+                    </div>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
