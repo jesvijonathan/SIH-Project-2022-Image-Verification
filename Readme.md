@@ -1,15 +1,16 @@
-!run main.py to start and test the logic...!
+! run app.py to test (flask) get photo recognition logic (and some more stuff i forgot, check it out !
+! if you wanna try the app, run app.py flask app and go to the local url it gives, and yeah... test it out !
 
 for now, i have done the backend and main logic
 
-whats remaining is,
-creating a flask hosting application
-creating a web/admission portal similar to government one
-linkinh the application
-checking and testing trials, and record accuracy
-find beter solution
-optimize
-and other crap, we will see ...
+whats remaining is, -
+*creating a flask hosting application
+*creating a web/admission portal similar to government one
+*linking the application
+*checking and testing trials, and record accuracy
+*find beter solution
+*optimize
+\*and other crap, we will see ...
 
 So what will the final design look like ?
 
@@ -20,8 +21,14 @@ and in the end presentation is important for our project,
 so i thought of hosting it for a week before presentation of our project,
 the user, does not have to see the back end, we just have to send them the website/demo link and let them use it (or) we make a pre recorded video of our project which would be great..
 
-the back end is O.K as of now, i want bharath & arun to replicate the government portal (css & html stuff only) meanwhile i have to create a flask application to get data & return/process the result
+the back end is done as of now, I want Bharath & Arun to replicate the government portal (css & html stuff only) meanwhile i have to create a flask application to get data & return/process the result
 
-lets get to work,
+lets goo...
 
 TRY TO COMPLETE AS SOON AS POSSIBLE !
+
+update :
+i have added flask application to get photos and signature from our web and store them in resources folder (also added a logging feature to manage ppl who view the webpage), all thats there is to link the main logic to rename the files to the user id of user and to add a logic to respond with when the user submits the form, and in the end add ui (bharath & arun you guys r on it, immma also do somethin abt it in the end) &... &... &... &... boom thats it !
+
+Bye,
+Regards Jesvi Jonathan

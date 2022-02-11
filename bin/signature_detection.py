@@ -2,7 +2,7 @@ import cv2
 import os
 from config import *
 
-#This works, but often also gives false positive cases, so am working on a better logic
+#This works, but often also gives false-positive cases, I am working on a better logic
 
 def signature_detect(sign_name):
     cwd = os.getcwd()
@@ -21,7 +21,7 @@ def signature_detect(sign_name):
     #contours, hier = cv2.findContours(img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
     if len(contours) != 0:
-        # set show_output_boxes in config to true to see what it has considered as a signature
+        # set show_output_boxes to true in config to see what it has considered as a signature
         print("Possible signature detected !")
         if show_output_boxes == True:
             for c in contours:
