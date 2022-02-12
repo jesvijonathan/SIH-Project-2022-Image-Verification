@@ -1,5 +1,6 @@
 ! run app.py to test (flask) get photo recognition logic (and some more stuff i forgot, check it out !
 ! if you wanna try the app, run app.py flask app and go to the local url (some https://some_local_ip/upload2) it gives, and yeah... test it out !
+! UI now works, run the flask app & just click on the url, will work, can submit forms, working on the websites/backend response !
 
 for now, i have done the backend and main logic
 
@@ -12,6 +13,7 @@ whats remaining is, -
 *optimize
 \*and other crap, we will see ...
 
+Update :
 So what will the final design look like ?
 
 Basically, we make a website similar to government admission portals & have the user fill in details,
@@ -27,12 +29,14 @@ lets goo...
 
 TRY TO COMPLETE AS SOON AS POSSIBLE !
 
-update :
-i have added flask application to get photos and signature from our web and store them in resources folder (also added a logging feature to manage ppl who view the webpage), all thats there is to link the main logic to rename the files to the user id of user and to add a logic to respond with when the user submits the form, and in the end add ui (bharath & arun you guys r on it, immma also do somethin abt it in the end) &... &... &... &... boom thats it !
+Update :
+i have added flask application to get photos and signature from our web and store them in resources folder (also added a logging feature to manage ppl who view the webpage), all thats there is to link the main logic to rename the files to the user id of user and to add a logic to respond with when the user submits the form, and in the end add ui (bharath & arun you guys r on it, immma also do somethin abtin the end) &... &... &... &... boom thats it !
 
 Bye,
 Regards Jesvi Jonathan
 
-
-
+Update :
 SIH UI has been created -- FRONT_END-----bharath_rajiv
+
+Update :
+Merged SIH Main UI, made changes to link UI with flask, updated path, title, and some minor changes..., tested file sharing/passing | backend image detection & return response yet to be linked
