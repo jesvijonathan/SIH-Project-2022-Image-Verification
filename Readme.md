@@ -32,3 +32,7 @@ i have added flask application to get photos and signature from our web and stor
 
 Bye,
 Regards Jesvi Jonathan
+
+
+
+SIH UI has been created -- FRONT_END-----bharath_rajiv
