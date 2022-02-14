@@ -1,0 +1,13 @@
+{{ res }} <br /><br />
+{{ face_det }}
+<br />
+{{ sign_det }}
+
+<script>
+  function sleep(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+  sleep(5000).then(() => {
+    history.back();
+  });
+</script>

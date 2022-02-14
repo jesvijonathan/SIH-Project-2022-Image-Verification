@@ -7,7 +7,7 @@ import bin.signature_detection as sd
 
 # Will add logic to get passport size photo from database using user id & signature of the user via same method, rn left it blank
 
-result_1 = fd.face_detect('fmale')
-result_2 = sd.signature_detect('sig')
+result_1 = fd.face_detect('fmale.jpg')
+result_2 = sd.signature_detect('sig.jpg')
 
 cv2.waitKey()

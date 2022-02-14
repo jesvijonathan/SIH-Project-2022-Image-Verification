@@ -1,3 +1,4 @@
+
 from flask import Flask, redirect, url_for, request, render_template, make_response, send_from_directory
 from flask_mail import * 
 from flask import jsonify
@@ -6,7 +7,15 @@ import datetime
 import pickle 
 import os
 from werkzeug.utils import secure_filename
-# from uritemplate.api import expand 
+
+from config import *
+
+import bin.face_detect as fd
+import bin.signature_detection as sd
+
+# Will add logic to get passport size photo from database using user id & signature of the user via same method, rn left it blank
+
+
 
 cwd = os.getcwd()
 UPLOAD_FOLDER_1 = (cwd + '\\resource\\passport_size_photo\\')
@@ -20,11 +29,20 @@ data = {
    'dic_log' : False,   
 }
 
+# @app.route('/upload', methods=['POST'])
+# def upload():
+#     try:
+#         imagefile = Flask.request.files.get('imagefile', '')
+#         ...
+#     except Exception as err:
+#        print(err)
+
+
 @app.route("/")
 def index():
    log(request.environ)
-   title = "Jesvi Jonathan"
-   description = "Jesvi's Official Webpage"
+   title = "SIH Admission Portal (Demo)"
+   description = "A demo page featuring AI algorithms for improving errors during admission"
 
    return render_template(
       'index.html',
@@ -35,22 +53,36 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    try:
-        imagefile = Flask.request.files.get('imagefile', '')
-        ...
-    except Exception as err:
-       print(err)
+    log()
 
-@app.route('/upload2', methods=['POST'])
-def upload2():
-    print('___________________',request.files['file'])
+    print('___________________\n',request.files['file'])
+
     file = request.files['file']
-    file2 = request.files['file2']
+    file2 = request.files['file2'] 
     filename = secure_filename(file.filename)
-    filename2 = secure_filename(file2.filename)
-    file.save(UPLOAD_FOLDER_1 + "\\" + filename)
-    file.save(UPLOAD_FOLDER_2 + "\\" + filename2)
-    return "DONE"
+    filename2 = secure_filename(file2.filename) 
+    exten = filename[-4:].split(".", 0)[0]
+    exten2 = filename2[-4:].split(".",0)[0]
+
+    g1 = ("\\photo_" + str(data['log_no']) + exten) 
+    g2 = ("\\sign_" + str(data['log_no']) + exten2)
+
+    p1 = (UPLOAD_FOLDER_1  + g1)
+    p2 = (UPLOAD_FOLDER_2 + g2) 
+
+    file.save(p1)
+    file2.save(p2) 
+
+    res_1 = fd.face_detect(g1)
+    res_2 = sd.signature_detect(g2)
+    
+    print(res_1,res_2)
+
+    return render_template('done.html', 
+    res="Confirming Details...", 
+    face_det=("Face Detected : " + str(res_1)),
+    sign_det=("Sign Detected : " + str(res_2)))
+
 
 ip = []
 l = "\n"
