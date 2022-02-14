@@ -39,4 +39,4 @@ Update :
 SIH UI has been created -- FRONT_END-----bharath_rajiv
 
 Update :
-Merged SIH Main UI, made changes to link UI with flask, updated path, title, and some minor changes..., tested file sharing/passing | backend image detection & return response yet to be linked
+Merged SIH Main UI, made changes to link UI with flask, updated path, title, and some minor changes..., tested file sharing/passing | backend image detection & return response yet to be linked | added new msg in index.html, it is in /template/index.html)
