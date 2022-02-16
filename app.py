@@ -56,7 +56,7 @@ def upload():
     log()
 
     print('___________________\n',request.files['file'])
-
+    
     file = request.files['file']
     file2 = request.files['file2'] 
     filename = secure_filename(file.filename)
@@ -72,16 +72,47 @@ def upload():
 
     file.save(p1)
     file2.save(p2) 
+    
+    msg1=msg2=mmsg=""
 
-    res_1 = fd.face_detect(g1)
-    res_2 = sd.signature_detect(g2)
+    res_1 = fd.face_detect(p1)
+    res_2 = sd.signature_detect(p2)
+    
+    mmsg="*Regular mode"
+
+    if res_1 == False:
+       if swap_if_misplaced == True:
+
+         res_3 = fd.face_detect(p2) 
+         if res_3 == True:
+            res_1 = True
+         
+            res_4 = sd.signature_detect(p1)
+            if res_4 == True:
+               res_2 = True
+
+            mmsg = "*Files were auto swapped as they were misplaced in the file placeholders"
+       
+       else:
+         msg1="The uploaded photo does not contain a face (Please check the file & try again)" 
+       
+
+    if res_2 == False:
+       msg2="The uploaded image does not contain a signature"  
     
     print(res_1,res_2)
 
-    return render_template('done.html', 
-    res="Confirming Details...", 
-    face_det=("Face Detected : " + str(res_1)),
-    sign_det=("Sign Detected : " + str(res_2)))
+    if (res_1 == True and res_2 == True) or display_result_page == True:
+       return render_template('done.html', 
+         res="", 
+         face_det=("Face Detected : " + str(res_1)),
+         sign_det=("Sign Detected : " + str(res_2)),
+         mmsg=mmsg)
+   
+    return render_template("index.html", 
+
+      msg1=msg1,
+      msg2=msg2)
 
 
 ip = []

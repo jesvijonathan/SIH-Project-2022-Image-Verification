@@ -21,6 +21,7 @@ def face_detect(photo_name):
     face_cascade = cv2.CascadeClassifier(him)
         
     pim = (cwd + '\\resource\\passport_size_photo\\' + photo_name)
+    pim = photo_name
     print(pim)
 
     # Read the input image

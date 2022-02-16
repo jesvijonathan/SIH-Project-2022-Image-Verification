@@ -8,8 +8,9 @@ def signature_detect(sign_name):
     cwd = os.getcwd()
     #print(cwd)
 
-    image = cv2.imread(cwd + "\\resource\\signature_photo\\" + sign_name, 1)
-
+    #image = cv2.imread(cwd + "\\resource\\signature_photo\\" + sign_name, 1)
+    image = cv2.imread(sign_name, 1)
+ 
     img = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     cv2.threshold(img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU,img)
     cv2.bitwise_not(img,img)

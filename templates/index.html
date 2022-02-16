@@ -187,14 +187,16 @@ A footer with some text, seperator, etc & a header with the website's title & a 
 
                         <div class="input-box">
                             <span class="details">Passport Size Photo</span>
-                            <input type="file" id="file" name="file">
+                            <input type="file" id="file" name="file" required>
+                            <div style="color: red; font-size: 10px;">{{ msg1 }}</div>
                         </div>
  
                         <br>
  
                         <div class="input-box">
                             <span class="details">User Signature</span>
-                            <input type="file" id="file2" name="file2">
+                            <input type="file" id="file2" name="file2" required>
+                            <div style="color: red; font-size: 10px;">{{ msg2 }}</div>
                         </div>
  
                         <div class="button">
