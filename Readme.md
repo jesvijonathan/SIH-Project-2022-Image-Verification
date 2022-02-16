@@ -40,3 +40,23 @@ SIH UI has been created -- FRONT_END-----bharath_rajiv
 
 Update :
 Merged SIH Main UI, made changes to link UI with flask, updated path, title, and some minor changes..., tested file sharing/passing | backend image detection & return response yet to be linked | added new msg in index.html, it is in /template/index.html)
+
+Updated :
+Ok, so as of now... run app.py
+All the logic is done,
+
+What it does is hosts a admission portal and accepts user details as a form, 
+When you attach your passport size photo and signature photo, it sends it back to the server
+The server gets the files, renames it to user id and places em in right folder
+Then the AI methods are called to check if the photos actually contain a face and signature,
+Then if configured in the config of application, it will swap the files if they were accidentally attached in the wrong placeholder
+And there after it redirects to a result page
+
+
+So, run the app n attach the files, 
+First add the right files n see what the results are
+Then swap the files, sign in place if photo and photo in place of sign and see the results
+Change the config and mess around (there also a no_redirect_to_result option in config, which will give an error in the admission portal if the files are not right, if right, it will give a "success" response
+
+Seriously, I'm bored.. I will not be touching this project for a while, you can mess around and share your thoughts..  it's done for now.
+Regards Jesvi Jonathan 
