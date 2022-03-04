@@ -76,6 +76,8 @@ def upload():
     msg1=msg2=mmsg=""
     java=0
     anchor=""
+   
+    yea=1
 
     res_1 = fd.face_detect(p1)
     res_2 = sd.signature_detect(p2)
@@ -97,6 +99,7 @@ def upload():
 
             mmsg = "*Files were automatically swapped, as they were placed in the wrong File-Placeholders"
             java=1
+            yea=0
 
          else:
             msg1="The uploaded photo *SHOULD* contain a face ! (Please check the file/format & try again !)" 
@@ -119,7 +122,8 @@ def upload():
          face_det=("Face Detected : " + str(res_1)),
          sign_det=("Sign Detected : " + str(res_2)),
          java=java,
-         mmsg=mmsg)
+         mmsg=mmsg,
+         yea=yea)
    
     return render_template("index.html", 
       anchor=anchor,

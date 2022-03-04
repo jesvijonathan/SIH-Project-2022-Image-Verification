@@ -27,11 +27,14 @@
 </script>
 
 <script>
-  var r = confirm(
-    'The Portal form was filled & recorded successfully with the User-Photos/Files meeting the requirements for User-Verification !\n\n\nYou Can Now Try -\n\n●Submitting The Correct Files\n●Submit Wrong Files (No Face Img)\n●Upload files In Wrong placeholders (Swap Img)\n\n\nBy pressing "OK" you will be redirected to Main Portal Again...\nClick "cancel" to stay'
-  );
-  if (r == true) {
-    document.getElementById("myForm").action = window.location.href = "/";
-    document.getElementById("myForm").submit();
+  var yea = "{{ yea }}";
+  if (yea == 1) {
+    var r = confirm(
+      'The Portal form was filled & recorded successfully with the User-Photos/Files meeting the requirements for User-Verification !\n\nYou Can Now Try -\n\n●Submitting The Correct Files\n●Submit Wrong Files (No Face Img)\n●Upload files In Wrong placeholders (Swap Img)\n\n\nBy pressing "OK" you will be redirected to Main Portal Again...\nClick "cancel" to stay'
+    );
+    if (r == true) {
+      document.getElementById("myForm").action = window.location.href = "/";
+      document.getElementById("myForm").submit();
+    }
   }
 </script>
