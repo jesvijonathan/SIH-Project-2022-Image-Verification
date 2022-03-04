@@ -64,8 +64,8 @@ def upload():
     exten = filename[-4:].split(".", 0)[0]
     exten2 = filename2[-4:].split(".",0)[0]
 
-    g1 = ("\\photo_" + str(data['log_no']) + exten) 
-    g2 = ("\\sign_" + str(data['log_no']) + exten2)
+    g1 = ("photo_" + str(data['log_no']) + exten) 
+    g2 = ("sign_" + str(data['log_no']) + exten2)
 
     p1 = (UPLOAD_FOLDER_1  + g1)
     p2 = (UPLOAD_FOLDER_2 + g2) 
@@ -74,11 +74,15 @@ def upload():
     file2.save(p2) 
     
     msg1=msg2=mmsg=""
+    java=0
+    anchor=""
 
     res_1 = fd.face_detect(p1)
     res_2 = sd.signature_detect(p2)
     
-    mmsg="*Regular mode"
+    mmsg="*Regular mode (ie: Quick Face & Signature Detection Used On User filled Form/Files)"
+
+    msg1="The uploaded photo does not contain a face ! (Please check the file & try again !)"
 
     if res_1 == False:
        if swap_if_misplaced == True:
@@ -91,28 +95,38 @@ def upload():
             if res_4 == True:
                res_2 = True
 
-            mmsg = "*Files were auto swapped as they were misplaced in the file placeholders"
-       
-       else:
-         msg1="The uploaded photo does not contain a face (Please check the file & try again)" 
-       
+            mmsg = "*Files were automatically swapped, as they were placed in the wrong File-Placeholders"
+            java=1
+
+         else:
+            msg1="The uploaded photo *SHOULD* contain a face ! (Please check the file/format & try again !)" 
+            mmsg =  "The uploaded image does not meet the requirements, Please check the file & Try again !    (Reason : Uploaded Passport Photo does not contain Face)"
+            java=1
+            anchor="retry"
 
     if res_2 == False:
-       msg2="The uploaded image does not contain a signature"  
+       msg2="The uploaded image does not contain a signature !"  
+       mmsg =  "The uploaded image does not meet the requirements, Please check the file & Try again !    (Reason : Uploaded Signature Photo does not contain a signature)"
+       java=1
+       anchor="retry"
     
-    print(res_1,res_2)
+
+    print(res_1,res_2,"\n",msg1,msg2)
 
     if (res_1 == True and res_2 == True) or display_result_page == True:
        return render_template('done.html', 
          res="", 
          face_det=("Face Detected : " + str(res_1)),
          sign_det=("Sign Detected : " + str(res_2)),
+         java=java,
          mmsg=mmsg)
    
     return render_template("index.html", 
-
+      anchor=anchor,
       msg1=msg1,
-      msg2=msg2)
+      msg2=msg2,
+      java=java,
+      mmsg=mmsg)
 
 
 ip = []

@@ -3,6 +3,7 @@
 <br />
 {{ sign_det }}
 <p>{{ mmsg }}</p>
+
 <script>
   function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -10,4 +11,27 @@
   sleep(5000).then(() => {
     history.back();
   });
+</script>
+
+<script>
+  setTimeout(function () {
+    var name = "{{ mmsg }}";
+    var j = "{{ java }}";
+
+    if (name == "") {
+    } else if (j == 1) {
+      alert(name);
+      j = j + 2;
+    }
+  }, 300);
+</script>
+
+<script>
+  var r = confirm(
+    'The Portal form was filled & recorded successfully with the User-Photos/Files meeting the requirements for User-Verification !\n\n\nYou Can Now Try -\n\n●Submitting The Correct Files\n●Submit Wrong Files (No Face Img)\n●Upload files In Wrong placeholders (Swap Img)\n\n\nBy pressing "OK" you will be redirected to Main Portal Again...\nClick "cancel" to stay'
+  );
+  if (r == true) {
+    document.getElementById("myForm").action = window.location.href = "/";
+    document.getElementById("myForm").submit();
+  }
 </script>
