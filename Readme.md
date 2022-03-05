@@ -60,3 +60,18 @@ Change the config and mess around (there also a no_redirect_to_result option in 
 
 Seriously, I'm bored.. I will not be touching this project for a while, you can mess around and share your thoughts..  it's done for now.
 Regards Jesvi Jonathan 
+
+
+Update :
+Back here, so today alone, lots of things have been done starting with
+Ui, the ui has beenm made responsive (@baitman) & cleaner from last update
+proved to give less errors
+program linked with all aspects, no hidden features hanging around (messy though)
+java script added, delay after submition to return to form result screen been extended & JS confirmation has been, with popups to notify
+Hosted on server, added required dependecies &  made changes to work on linux cloud service
+logger active, custom domain (routing)
+prepared flowchart, ppt, Demo Video (screen recorder)
+and other stuff, check commit changes...
+
+thats it... bye 
+regards Jesvi Jonathan
